@@ -1,0 +1,238 @@
+<html lang="uk"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Тарифи — гро.ші</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .pricing-hero{text-align:center;padding:100px 60px 60px;max-width:1600px;margin:0 auto}
+    .pricing-hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;letter-spacing:-.04em;margin-bottom:16px}
+    .pricing-hero p{font-size:1.1rem;color:rgba(245,238,220,.55);max-width:520px;margin:0 auto 48px}
+    .toggle-wrap{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:64px}
+    .toggle-label{font-size:.9rem;font-weight:700;color:rgba(245,238,220,.45)}
+    .toggle-label.active{color:var(--cream)}
+    .toggle{width:52px;height:28px;background:rgba(245,238,220,.1);border-radius:100px;position:relative;cursor:pointer;border:1px solid rgba(245,238,220,.15);transition:background .3s}
+    .toggle.on{background:var(--g200b)}
+    .toggle::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .3s}
+    .toggle.on::after{transform:translateX(24px)}
+    .badge-save{background:rgba(168,255,120,.15);color:#a8ff78;font-size:.7rem;font-weight:800;padding:3px 10px;border-radius:100px;border:1px solid rgba(168,255,120,.2)}
+
+    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto;padding:0 60px 80px}
+    .plan{background:var(--dark);border:1px solid var(--border);border-radius:24px;padding:44px 36px;position:relative;transition:border-color .3s,transform .3s}
+    .plan:hover{border-color:rgba(74,144,217,.3);transform:translateY(-4px)}
+    .plan.featured{border-color:rgba(74,144,217,.4);background:linear-gradient(160deg,rgba(74,144,217,.07),var(--dark))}
+    .plan-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--g200a),var(--g500b));color:#fff;font-size:.68rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:5px 18px;border-radius:100px;white-space:nowrap}
+    .plan-name{font-size:1rem;font-weight:800;color:rgba(245,238,220,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+    .plan-price{font-size:3.2rem;font-weight:900;letter-spacing:-.04em;line-height:1;margin-bottom:6px}
+    .plan-price span{font-size:1.1rem;font-weight:600;color:rgba(245,238,220,.4)}
+    .plan-period{font-size:.82rem;color:rgba(245,238,220,.35);margin-bottom:32px}
+    .plan-desc{font-size:.95rem;color:rgba(245,238,220,.5);line-height:1.65;margin-bottom:32px;min-height:56px}
+    .plan-divider{border:none;border-top:1px solid rgba(245,238,220,.07);margin-bottom:28px}
+    .plan-features{list-style:none;padding:0;margin:0 0 36px;display:flex;flex-direction:column;gap:13px}
+    .plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:.92rem;color:rgba(245,238,220,.65);line-height:1.45}
+    .plan-features li .fi{flex-shrink:0;margin-top:2px}
+    .fi-check{color:#a8ff78}
+    .fi-cross{color:rgba(245,238,220,.2)}
+    .fi-dash{color:rgba(245,238,220,.25)}
+    .plan-btn{display:block;width:100%;padding:15px;border-radius:100px;font-size:.95rem;font-weight:800;font-family:inherit;cursor:pointer;text-align:center;text-decoration:none;transition:all .2s}
+    .plan-btn.outline{background:transparent;border:2px solid rgba(245,238,220,.15);color:var(--cream)}
+    .plan-btn.outline:hover{border-color:rgba(245,238,220,.4)}
+    .plan-btn.primary{background:linear-gradient(135deg,var(--g200a),var(--g500b));border:none;color:#fff;box-shadow:0 8px 24px rgba(74,144,217,.25)}
+    .plan-btn.primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(74,144,217,.35)}
+
+    .faq-sec{max-width:860px;margin:0 auto;padding:0 60px 100px}
+    .faq-sec h2{font-size:2rem;font-weight:900;text-align:center;margin-bottom:48px}
+    .faq-item{border-top:1px solid rgba(245,238,220,.08);padding:24px 0;cursor:pointer}
+    .faq-item:last-child{border-bottom:1px solid rgba(245,238,220,.08)}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;font-size:1rem;font-weight:700;gap:16px}
+    .faq-q svg{flex-shrink:0;transition:transform .3s}
+    .faq-item.open .faq-q svg{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .3s;font-size:.95rem;color:rgba(245,238,220,.52);line-height:1.75}
+    .faq-item.open .faq-a{max-height:200px;padding-top:14px}
+
+    .btn-nav-ghost{padding:10px 22px;border-radius:100px;border:1.5px solid rgba(245,238,220,.15);color:rgba(245,238,220,.7);font-size:.82rem;font-weight:700;text-decoration:none;transition:border-color .2s,color .2s}
+    .btn-nav-ghost:hover{border-color:rgba(245,238,220,.4);color:var(--cream)}
+
+    @media(max-width:900px){
+      .plans{grid-template-columns:1fr;padding:0 24px 60px}
+      .pricing-hero{padding:80px 24px 40px}
+      .faq-sec{padding:0 24px 60px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="15" stroke="url(#ng)" stroke-width="2"></circle>
+      <text x="16" y="21" text-anchor="middle" font-size="14" font-weight="900" fill="url(#ng)" font-family="Nunito,sans-serif">₴</text>
+      <defs><linearGradient id="ng" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#4a90d9"></stop><stop offset="1" stop-color="#7bb3e8"></stop></linearGradient></defs>
+    </svg>
+    <span style="font-weight:900;font-size:1.05rem">гро.ші</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:8px">
+    <a href="index.html" class="btn-nav-ghost">Головна</a>
+    <a href="index.html#early-access" class="btn-nav">Записатись</a>
+  </div>
+</nav>
+
+<div class="pricing-hero">
+  <div class="sec-label" style="display:inline-block;margin-bottom:20px">Тарифи</div>
+  <h1>Простий та прозорий<br><span style="background:linear-gradient(135deg,#4a90d9,#7bb3e8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">прайсинг</span></h1>
+  <p>Починай безкоштовно. Переходь на Pro коли будеш готовий — без прихованих платежів.</p>
+  <div class="toggle-wrap">
+    <span class="toggle-label active" id="lbl-month">Щомісяця</span>
+    <div class="toggle" id="billing-toggle" onclick="toggleBilling()"></div>
+    <span class="toggle-label" id="lbl-year">Щорічно</span>
+    <span class="badge-save">-20%</span>
+  </div>
+</div>
+
+<div class="plans">
+
+  <!-- FREE -->
+  <div class="plan">
+    <div class="plan-name">Базовий</div>
+    <div class="plan-price" id="price-free">₴0 <span>/міс</span></div>
+    <div class="plan-period">Назавжди безкоштовно</div>
+    <div class="plan-desc">Ідеально щоб почати — відстежуй витрати та підключи Monobank.</div>
+    <hr class="plan-divider">
+    <ul class="plan-features">
+      <li><span class="fi fi-check">✓</span> Підключення Monobank</li>
+      <li><span class="fi fi-check">✓</span> Ручне додавання витрат</li>
+      <li><span class="fi fi-check">✓</span> До 3 активних підписок</li>
+      <li><span class="fi fi-check">✓</span> Базові графіки витрат</li>
+      <li><span class="fi fi-cross">✗</span> <span style="opacity:.35">AI-аналітика та поради</span></li>
+      <li><span class="fi fi-cross">✗</span> <span style="opacity:.35">Необмежені підписки</span></li>
+      <li><span class="fi fi-cross">✗</span> <span style="opacity:.35">Кілька банків</span></li>
+      <li><span class="fi fi-cross">✗</span> <span style="opacity:.35">Фінансові цілі</span></li>
+    </ul>
+    <a href="index.html#early-access" class="plan-btn outline">Почати безкоштовно</a>
+  </div>
+
+  <!-- PRO -->
+  <div class="plan featured">
+    <div class="plan-badge">Найпопулярніший</div>
+    <div class="plan-name">Pro</div>
+    <div class="plan-price" id="price-pro">₴99 <span>/міс</span></div>
+    <div class="plan-period" id="period-pro">Або ₴950/рік — економія ₴238</div>
+    <div class="plan-desc">Повний контроль над фінансами з AI-аналітикою та необмеженими підписками.</div>
+    <hr class="plan-divider">
+    <ul class="plan-features">
+      <li><span class="fi fi-check">✓</span> Все з Базового тарифу</li>
+      <li><span class="fi fi-check">✓</span> AI-аналітика (ChatGPT)</li>
+      <li><span class="fi fi-check">✓</span> Необмежені підписки</li>
+      <li><span class="fi fi-check">✓</span> Фінансові цілі та прогнози</li>
+      <li><span class="fi fi-check">✓</span> Експорт звітів (PDF/CSV)</li>
+      <li><span class="fi fi-check">✓</span> Пріоритетна підтримка</li>
+      <li><span class="fi fi-cross">✗</span> <span style="opacity:.35">Підключення 2+ банків</span></li>
+      <li><span class="fi fi-cross">✗</span> <span style="opacity:.35">Сімейний доступ</span></li>
+    </ul>
+    <a href="index.html#early-access" class="plan-btn primary">Спробувати Pro</a>
+  </div>
+
+  <!-- PREMIUM -->
+  <div class="plan">
+    <div class="plan-name">Преміум</div>
+    <div class="plan-price" id="price-prem">₴199 <span>/міс</span></div>
+    <div class="plan-period" id="period-prem">Або ₴1900/рік — економія ₴488</div>
+    <div class="plan-desc">Для тих хто хоче максимум — кілька банків, сім'я, повна автоматизація.</div>
+    <hr class="plan-divider">
+    <ul class="plan-features">
+      <li><span class="fi fi-check">✓</span> Все з Pro тарифу</li>
+      <li><span class="fi fi-check">✓</span> Підключення до 5 банків</li>
+      <li><span class="fi fi-check">✓</span> Сімейний доступ (до 4 осіб)</li>
+      <li><span class="fi fi-check">✓</span> Розширена AI-аналітика</li>
+      <li><span class="fi fi-check">✓</span> Персональний фінансовий план</li>
+      <li><span class="fi fi-check">✓</span> Інтеграція з податковою</li>
+      <li><span class="fi fi-check">✓</span> Виділена підтримка 24/7</li>
+      <li><span class="fi fi-check">✓</span> Ранній доступ до нових функцій</li>
+    </ul>
+    <a href="index.html#early-access" class="plan-btn outline">Обрати Преміум</a>
+  </div>
+
+</div>
+
+<!-- FAQ -->
+<div class="faq-sec">
+  <h2>Часті запитання</h2>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">Чи можна скасувати підписку будь-коли?
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    </div>
+    <div class="faq-a">Так, без будь-яких штрафів. Скасовуєш у налаштуваннях — і більше не списується. Дані зберігаються 30 днів після скасування.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">Як працює безкоштовний тариф?
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    </div>
+    <div class="faq-a">Базовий тариф безкоштовний назавжди — без кредитної картки. Ти отримуєш підключення Monobank, ручний облік і базові графіки без жодних обмежень по часу.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">Чи безпечні мої банківські дані?
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    </div>
+    <div class="faq-a">Ми використовуємо офіційний Monobank API — тільки читання транзакцій, без доступу до переказів. Всі дані шифруються end-to-end. Ми не зберігаємо паролі чи номери карток.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">Коли вийде мобільний застосунок?
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    </div>
+    <div class="faq-a">iOS та Android застосунок в розробці. Всі хто записався на ранній доступ — отримають бету першими та безкоштовний Pro на 3 місяці.</div>
+  </div>
+
+  <div class="faq-item" onclick="toggleFaq(this)">
+    <div class="faq-q">Які банки будуть підключені наступними?
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+    </div>
+    <div class="faq-a">Наступними плануємо ПриватБанк та УКРСИБBANK. Голосуй за пріоритет у застосунку — ми реалізуємо найпотрібніші інтеграції першими.</div>
+  </div>
+</div>
+
+<footer>
+  <div class="flogo">
+    <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="15" stroke="url(#fg)" stroke-width="2"></circle>
+      <text x="16" y="21" text-anchor="middle" font-size="14" font-weight="900" fill="url(#fg)" font-family="Nunito,sans-serif">₴</text>
+      <defs><linearGradient id="fg" x1="0" y1="0" x2="32" y2="32"><stop stop-color="#4a90d9"></stop><stop offset="1" stop-color="#7bb3e8"></stop></linearGradient></defs>
+    </svg>
+    <span style="font-weight:800;font-size:.95rem;margin-left:8px">гро.ші</span>
+  </div>
+  <p>© 2025 гро.ші. Зроблено в Україні ♥</p>
+</footer>
+
+<script>
+let isYearly = false;
+const prices = {
+  free: {m:'₴0', y:'₴0'},
+  pro:  {m:'₴99', y:'₴79'},
+  prem: {m:'₴199', y:'₴159'}
+};
+
+function toggleBilling() {
+  isYearly = !isYearly;
+  document.getElementById('billing-toggle').classList.toggle('on', isYearly);
+  document.getElementById('lbl-month').classList.toggle('active', !isYearly);
+  document.getElementById('lbl-year').classList.toggle('active', isYearly);
+  const period = isYearly ? '/міс (при оплаті за рік)' : '/міс';
+  document.getElementById('price-free').innerHTML = prices.free[isYearly?'y':'m'] + ' <span>/міс</span>';
+  document.getElementById('price-pro').innerHTML  = prices.pro[isYearly?'y':'m']  + ' <span>' + period + '</span>';
+  document.getElementById('price-prem').innerHTML = prices.prem[isYearly?'y':'m'] + ' <span>' + period + '</span>';
+  document.getElementById('period-pro').textContent  = isYearly ? 'Економія ₴238 на рік' : 'Або ₴950/рік — економія ₴238';
+  document.getElementById('period-prem').textContent = isYearly ? 'Економія ₴488 на рік' : 'Або ₴1900/рік — економія ₴488';
+}
+
+function toggleFaq(el) {
+  const isOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) el.classList.add('open');
+}
+</script>
+
+</body></html>
