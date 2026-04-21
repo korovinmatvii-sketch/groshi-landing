@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Блог — гро.ші</title>
+  <meta name="description" content="Статті про фінансову грамотність, підписки та особисті фінанси від команди гро.ші.">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* ── BLOG LISTING ── */
+    .blog-hero{padding:120px 60px 64px;max-width:1200px;margin:0 auto}
+    .blog-hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:900;letter-spacing:-.04em;line-height:1.08;margin-bottom:16px}
+    .blog-hero p{font-size:1.12rem;color:rgba(245,238,220,.5);max-width:500px}
+
+    .blog-grid{max-width:1200px;margin:0 auto;padding:0 60px 120px;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+
+    .post-card{background:var(--dark);border:1px solid var(--border);border-radius:var(--r);padding:36px 32px;display:flex;flex-direction:column;gap:16px;text-decoration:none;color:inherit;transition:transform .25s,border-color .25s}
+    .post-card:hover{transform:translateY(-5px);border-color:rgba(74,144,217,.28)}
+    .post-cat{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--g200b);padding:5px 14px;border-radius:100px;border:1px solid rgba(74,144,217,.3);background:rgba(74,144,217,.07);width:fit-content}
+    .post-card h2{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;line-height:1.35;color:var(--cream);flex:1}
+    .post-card p{font-size:.92rem;color:rgba(245,238,220,.48);line-height:1.7;margin:0}
+    .post-meta{display:flex;gap:14px;font-size:.76rem;color:rgba(245,238,220,.28);margin-top:auto;padding-top:20px;border-top:1px solid rgba(245,238,220,.06)}
+    .read-more{display:inline-flex;align-items:center;gap:6px;font-size:.84rem;font-weight:700;color:var(--g200b);margin-top:8px;transition:gap .2s}
+    .post-card:hover .read-more{gap:10px}
+
+    .blog-coming{grid-column:1/-1;background:rgba(245,238,220,.03);border:1px dashed rgba(245,238,220,.1);border-radius:var(--r);padding:48px;text-align:center}
+    .blog-coming p{color:rgba(245,238,220,.3);font-size:.95rem}
+    .blog-coming strong{color:rgba(245,238,220,.5)}
+
+    @media(max-width:1024px){
+      .blog-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:640px){
+      .blog-hero,.blog-grid{padding-left:24px;padding-right:24px}
+      .blog-hero{padding-top:80px;padding-bottom:40px}
+      .blog-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo"><span style="font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,#7bb3e8,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">гро.ші</span></a>
+  <ul>
+    <li><a href="/blog" class="nav-link" style="color:var(--cream)">Блог</a></li>
+    <li><a href="/pricing" class="nav-link">Тарифи</a></li>
+    <li><a href="/#early-access" class="btn-nav">Бета-доступ</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="blog-hero">
+  <div class="sec-label">Блог</div>
+  <h1>Фінанси <span class="grad">простою мовою</span></h1>
+  <p>Статті про підписки, витрати та особисті фінанси — поки застосунок готується до запуску.</p>
+</div>
+
+<!-- POSTS -->
+<div class="blog-grid">
+
+  <a href="/blog/5-pidpysok-za-yaki-ukraintsi-platyat-i-zabuvayut" class="post-card">
+    <span class="post-cat">Підписки</span>
+    <h2>5 підписок, за які українці платять і забувають</h2>
+    <p>75% людей хоч раз платили за підписку, яку забули скасувати. Ось найпоширеніші «тихі крадії» бюджету.</p>
+    <div class="post-meta">
+      <span>21 квітня 2026</span>
+      <span>5 хв читання</span>
+    </div>
+    <span class="read-more">Читати →</span>
+  </a>
+
+  <div class="blog-coming">
+    <strong>Більше статей — незабаром</strong>
+    <p>Ми пишемо про особисті фінанси, підписки та те, як витрачати менше без зусиль.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="flogo"><span style="font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,#7bb3e8,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">гро.ші</span></a>
+  <p>© 2026 гро.ші — AI-трекер для українців</p>
+  <p>Made with ♥️ in Kyiv</p>
+</footer>
+
+</body>
+</html>
