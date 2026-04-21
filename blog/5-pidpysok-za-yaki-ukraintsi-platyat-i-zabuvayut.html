@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>5 підписок, за які українці платять і забувають — гро.ші</title>
+  <meta name="description" content="75% людей хоч раз платили за підписку, яку забули скасувати. Ось найпоширеніші «тихі крадії» бюджету і як з ними боротися.">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* ── BLOG ARTICLE ── */
+    .article-hero{padding:120px 60px 64px;max-width:800px;margin:0 auto}
+    .article-hero .sec-label{margin-bottom:20px}
+    .article-hero h1{font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:900;letter-spacing:-.04em;line-height:1.1;margin-bottom:24px;color:var(--cream)}
+    .article-meta{display:flex;align-items:center;gap:20px;font-size:.82rem;color:rgba(245,238,220,.38);margin-bottom:16px;flex-wrap:wrap}
+    .article-meta .tag{padding:4px 14px;border-radius:100px;border:1px solid rgba(74,144,217,.3);color:var(--g200b);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+    .article-intro{font-size:1.18rem;color:rgba(245,238,220,.62);line-height:1.8;border-left:3px solid var(--g200a);padding-left:22px;margin-top:36px;font-style:italic}
+
+    .article-body{max-width:800px;margin:0 auto;padding:0 60px 120px}
+    .article-body h2{font-size:1.6rem;font-weight:900;letter-spacing:-.03em;margin:56px 0 16px;color:var(--cream)}
+    .article-body h2 .num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--g200a),var(--g500b));color:#fff;font-size:.95rem;font-weight:900;margin-right:14px;flex-shrink:0;vertical-align:middle}
+    .article-body p{font-size:1.05rem;color:rgba(245,238,220,.62);line-height:1.85;margin-bottom:18px}
+    .article-body strong{color:var(--cream);font-weight:700}
+    .tip-box{background:rgba(74,144,217,.07);border:1px solid rgba(74,144,217,.2);border-radius:16px;padding:20px 26px;margin:18px 0 36px}
+    .tip-box .tip-label{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--g200b);margin-bottom:8px}
+    .tip-box p{margin-bottom:0;font-size:.98rem;color:rgba(245,238,220,.7)}
+
+    .stat-banner{background:var(--dark);border:1px solid var(--border);border-radius:22px;padding:40px;display:flex;gap:48px;flex-wrap:wrap;margin:48px 0;justify-content:center;text-align:center}
+    .stat-item .snum{font-size:2.6rem;font-weight:900;letter-spacing:-.04em;background:linear-gradient(135deg,var(--g200b),var(--g500b));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .stat-item .slabel{font-size:.8rem;color:rgba(245,238,220,.38);margin-top:4px;max-width:140px}
+
+    .steps-list{counter-reset:steps;margin:24px 0 36px}
+    .step-item{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid rgba(245,238,220,.06)}
+    .step-item:last-child{border-bottom:none}
+    .step-num{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--g200a),var(--g500b));display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:900;color:#fff;margin-top:2px}
+    .step-item p{margin-bottom:0}
+
+    .article-footer{max-width:800px;margin:0 auto 80px;padding:0 60px}
+    .cta-inline{background:var(--dark);border:1px solid rgba(74,144,217,.2);border-radius:24px;padding:44px 48px;text-align:center;position:relative;overflow:hidden}
+    .cta-inline::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:400px;height:200px;background:radial-gradient(ellipse,rgba(74,144,217,.12),transparent 70%)}
+    .cta-inline h3{font-size:1.5rem;font-weight:900;margin-bottom:12px;position:relative;z-index:1}
+    .cta-inline p{color:rgba(245,238,220,.52);margin-bottom:28px;position:relative;z-index:1}
+    .cta-inline .btn-hero{position:relative;z-index:1}
+
+    .back-link{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:rgba(245,238,220,.45);font-size:.88rem;font-weight:600;padding:16px 0;transition:color .2s}
+    .back-link:hover{color:var(--cream)}
+    .back-link svg{transition:transform .2s}
+    .back-link:hover svg{transform:translateX(-3px)}
+
+    @media(max-width:768px){
+      .article-hero,.article-body,.article-footer{padding-left:24px;padding-right:24px}
+      .article-hero{padding-top:80px;padding-bottom:40px}
+      .stat-banner{gap:28px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo"><span style="font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,#7bb3e8,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">гро.ші</span></a>
+  <ul>
+    <li><a href="/blog" class="nav-link">Блог</a></li>
+    <li><a href="/pricing" class="nav-link">Тарифи</a></li>
+    <li><a href="/#early-access" class="btn-nav">Бета-доступ</a></li>
+  </ul>
+</nav>
+
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <a href="/blog" class="back-link">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+    Всі статті
+  </a>
+  <div class="sec-label" style="margin-top:24px">Підписки</div>
+  <h1>5 підписок, за які українці платять і забувають</h1>
+  <div class="article-meta">
+    <span class="tag">Фінансова грамотність</span>
+    <span>21 квітня 2026</span>
+    <span>5 хв читання</span>
+  </div>
+  <p class="article-intro">Ти теж колись помічав списання ₴149 і не міг згадати, за що це? Ти не один — 75% людей стикалися з цим самим.</p>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-body">
+
+  <p>Ми провели опитування серед 114 українців і з'ясували: <strong>хтось із чотирьох</strong> хоча б раз забував вчасно скасувати trial-підписку або платний сервіс, яким давно не користується. А для 37% це взагалі регулярна історія — гроші списуються щомісяця, а вони дізнаються про це випадково.</p>
+
+  <div class="stat-banner">
+    <div class="stat-item"><div class="snum">114</div><div class="slabel">респондентів у нашому опитуванні</div></div>
+    <div class="stat-item"><div class="snum">75%</div><div class="slabel">платили за забуту підписку</div></div>
+    <div class="stat-item"><div class="snum">37%</div><div class="slabel">стикаються з цим регулярно</div></div>
+  </div>
+
+  <p>Ось п'ять типових «тихих крадіїв» із твого бюджету.</p>
+
+  <!-- 1 -->
+  <h2><span class="num">1</span>Стрімінгові сервіси, які ти не дивишся</h2>
+  <p>Netflix, Megogo, Spotify, Apple Music — зручно підключити, складно відключити. За нашими даними, <strong>66% опитаних мають кілька платних стрімінгів одночасно</strong>. При цьому більшість активно дивляться лише один. А решта просто «висять» і з'їдають по ₴100–200 щомісяця.</p>
+  <div class="tip-box">
+    <div class="tip-label">Що робити</div>
+    <p>Відкрий виписку в Monobank за останні 3 місяці. Знайди всі регулярні списання на стрімінги. Залиш один, яким реально користуєшся.</p>
+  </div>
+
+  <!-- 2 -->
+  <h2><span class="num">2</span>Хмарні сховища з безкоштовними альтернативами</h2>
+  <p>Google One, iCloud+, Dropbox Plus — якщо ти колись вичерпав безкоштовне місце і підключив платний план, перевір: можливо, ти давно почистив файли, а підписка залишилася. Або в тебе дублюються два хмарних сервіси, хоча вистачило б одного.</p>
+  <div class="tip-box">
+    <div class="tip-label">Що робити</div>
+    <p>Перевір, скільки місця реально зайнято. Часто після видалення старих фото та відео можна повернутися на безкоштовний тариф.</p>
+  </div>
+
+  <!-- 3 -->
+  <h2><span class="num">3</span>Підписки з trial, який ти забув скасувати</h2>
+  <p>Фітнес-трекери, медитація, фоторедактори, VPN — класична схема: «7 днів безкоштовно», а потім тихе списання. Саме цей сценарій назвали більшим <strong>75% наших респондентів</strong>. Деякі додатки навмисно ховають кнопку скасування.</p>
+  <div class="tip-box">
+    <div class="tip-label">Що робити</div>
+    <p>Зайди в App Store → Підписки (або Google Play → Платежі та підписки). Там побачиш повний список активних підписок — навіть ті, про які забув.</p>
+  </div>
+
+  <!-- 4 -->
+  <h2><span class="num">4</span>Підписки на онлайн-навчання</h2>
+  <p>Coursera, Udemy Pro, LinkedIn Learning, Headway — підключив, щоб «нарешті почати вчитися», пройшов один урок і забув. А підписка працює. Це особливо поширено серед молоді 16–29 років — нашого найактивнішого сегменту.</p>
+  <div class="tip-box">
+    <div class="tip-label">Що робити</div>
+    <p>Будь чесним із собою. Якщо не відкривав додаток 30+ днів — скасуй. Завжди можна підключити знову, коли реально буде час.</p>
+  </div>
+
+  <!-- 5 -->
+  <h2><span class="num">5</span>Ігрові підписки та донати</h2>
+  <p>Xbox Game Pass, PlayStation Plus, підписки в мобільних іграх. Часто підключаються імпульсивно — «тільки на місяць» — і живуть роками. Плюс автоматичні донати на Patreon чи YouTube-каналах, які ти вже не дивишся.</p>
+  <div class="tip-box">
+    <div class="tip-label">Що робити</div>
+    <p>Перевір усі прив'язані картки в ігрових акаунтах. Якщо не граєш активно — від'яжи картку, щоб наступне списання не пройшло автоматично.</p>
+  </div>
+
+  <!-- TOTAL -->
+  <h2 style="margin-top:72px">Скільки це коштує насправді?</h2>
+  <p>Почнемо мінімально: <strong>3 забуті підписки по ₴100–150 — це ₴300–450 на місяць</strong>, або ₴3 600–5 400 на рік. На ці гроші можна злітати бюджетним рейсом на вікенд або зібрати непогану фінансову подушку.</p>
+  <p>І тепер головне: 44 людини з нашого опитування сказали, що фінансовий спокій для них — це «наявність подушки безпеки». Іронія в тому, що ця подушка може ховатися саме в тих підписках, які ти забув скасувати.</p>
+
+  <!-- HOW TO AVOID -->
+  <h2>Як не витрачати гроші на підписки</h2>
+  <div class="steps-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <p>Зайди в налаштування App Store / Google Play і перегляни список активних підписок. Скасуй все, чим не користуєшся.</p>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <p>Відкрий виписку Monobank за останні 3 місяці. Знайди регулярні списання, які повторюються — це і є твої підписки.</p>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <p>Постав нагадування перевіряти підписки раз на місяць. Або довір це автоматиці — саме для цього ми робимо <strong>гро.ші</strong>.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA -->
+<div class="article-footer">
+  <div class="cta-inline">
+    <h3>гро.ші знайде твої підписки автоматично</h3>
+    <p>AI-трекер підключається до Monobank і сам знаходить регулярні списання. Підкаже, що можна скасувати і скільки ти заощадиш.</p>
+    <a href="/#early-access" class="btn-hero">Хочу бета-доступ →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="flogo"><span style="font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,#7bb3e8,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">гро.ші</span></a>
+  <p>© 2026 гро.ші — AI-трекер для українців</p>
+  <p>Made with ♥️ in Kyiv</p>
+</footer>
+
+</body>
+</html>
